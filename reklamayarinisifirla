@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class reklamayarinisifirla : MonoBehaviour
+{
+    int reklamciksinmi;
+
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("reklamciksinmi"))
+        {
+
+            reklamciksinmi = PlayerPrefs.GetInt("reklamciksinmi");
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("reklamciksinmi", 0);
+
+        }
+
+
+        if (reklamciksinmi >= 5)
+
+        {
+            PlayerPrefs.SetInt("reklamciksinmi", 0);
+        }
+    }
